@@ -14,7 +14,7 @@ func main() {
 	mysql.DatabaseInit()
 	database.RunMigration()
 
-	routes.RouteInit(e.Group("/api/v1"))
+	routes.Routes(e.Group("/api/v1"))
 
 	e.Logger.Fatal(e.Start("localhost:5000"))
 }
