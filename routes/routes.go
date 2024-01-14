@@ -36,4 +36,11 @@ func Routes(e *echo.Group) {
 
 	e.GET("/users", cu.GetUsers)
 	e.GET("/user/:id", cu.GetUser)
+
+	// Vote
+	rv := services.VoteRepository(mysql.DB)
+	cv := controller.VoteController(rv)
+
+	e.GET("/votes", cv.FindVotes)
+	e.GET("/vote/:id", cv.CreateVote)
 }

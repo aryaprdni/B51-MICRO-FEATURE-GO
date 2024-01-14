@@ -12,6 +12,7 @@ func RunMigration() {
 		&models.Paslon{},
 		&models.Partai{},
 		&models.User{},
+		&models.Vote{},
 	)
 
 	if err != nil {
